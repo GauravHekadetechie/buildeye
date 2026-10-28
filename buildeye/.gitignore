@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+backend/data/users.json
+backend/data/blueprints.json
+backend/data/expenses.json
+backend/data/settings.json
+backend/uploads/*
+!backend/uploads/.gitkeep
+.DS_Store

@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { UploadCloud, ArrowRight, ImageIcon, Trash2 } from "lucide-react";
 import api from "../../api/axios.js";
 import { getErrorMessage } from "../../api/errorMessage.js";
+import { fileUrl } from "../../config.js";
 import CompassPicker from "../../components/blueprint/CompassPicker.jsx";
 import { useAuth } from "../../context/AuthContext.jsx";
 
@@ -188,7 +189,7 @@ export default function BlueprintAnalyzer() {
                 to={`/dashboard/blueprint/${b.id}`}
                 className="group relative border border-ink-line bg-ink-panel/30 hover:border-signal/50 rounded-sm overflow-hidden transition-colors"
               >
-                <img src={b.imageUrl} alt={b.name} className="w-full h-32 object-cover" />
+                <img src={fileUrl(b.imageUrl)} alt={b.name} className="w-full h-32 object-cover" />
                 {canDelete && (
                   <button
                     onClick={(e) => handleDelete(e, b.id, b.name)}
